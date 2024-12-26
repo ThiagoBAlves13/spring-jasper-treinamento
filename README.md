@@ -75,7 +75,3 @@ git clone https://github.com/ThiagoBAlves13/spring-jasper-treinamento.git
  ```
 
 4. Execute usando como aplicação Spring: Clique no projeto com o botão direito -> Run As -> Spring Boot App.
-
-<h5> OBS: Esses passos estão descritos de forma visual no fluxograma abaixo.
- ![fluxograma](src/main/resources/images/fluxo.png)
-# spring-jasper-treinamento
