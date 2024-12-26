@@ -1,0 +1,1 @@
+{"doc":" \n Configuração do Swagger\n \n @author Núcleo de Implantação da Fábrica de Software - CASNAV, 2021\n\n","fields":[],"enumConstants":[],"methods":[{"name":"swaggerAPI","paramTypes":[],"doc":" \n Método que define a configuração do Swagger - OpenApi (com autorização)\n \n @return configuração OpenAPI\n"}],"constructors":[]}

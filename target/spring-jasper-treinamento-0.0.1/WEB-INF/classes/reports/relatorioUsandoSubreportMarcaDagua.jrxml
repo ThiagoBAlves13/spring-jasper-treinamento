@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorioUsandoSubreportMarcaDagua" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c4db7e3d-c50b-408c-bbc6-7649520375a2">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="marcaDagua" mode="Opaque" forecolor="rgba(255, 255, 255, 0.023529412)" backcolor="rgba(255, 255, 255, 0.03137255)"/>
+	<parameter name="parTreinamentoJasperPojo" class="java.util.List"/>
+	<parameter name="parJrTreinamentoJasperPojo" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="parSubreportCompile" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="parTextoSubReport" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Esse texto foi passado do relatório principal para o subreport por parâmetro."]]></defaultValueExpression>
+	</parameter>
+	<parameter name="parMarcaDagua" class="java.lang.String"/>
+	<parameter name="parTextoImagem" class="java.lang.String"/>
+	<parameter name="ocultarTitulo" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[false]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="data" class="java.lang.String"/>
+	<background>
+		<band height="788" splitType="Prevent">
+			<printWhenExpression><![CDATA[$P{parMarcaDagua} != null && $P{parTextoImagem} != null]]></printWhenExpression>
+			<image scaleImage="RealSize" hAlign="Center" vAlign="Middle">
+				<reportElement style="marcaDagua" mode="Opaque" x="117" y="65" width="320" height="270" forecolor="rgba(255, 255, 255, 0.37254903)" backcolor="rgba(255, 255, 255, 0.03137255)" uuid="4f09abbc-62d4-4a00-bd7f-3fe5c28a0868">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{parMarcaDagua}]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="0" y="394" width="555" height="394" uuid="60bb0a13-5634-4bcb-b4fb-c7de5c958c46">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{parTextoImagem}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="0" width="555" height="79" uuid="d9d1b5cb-6c11-4f58-8d11-ed8289965700"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Carlito" size="18" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Usando subreport recebendo dados do relatório principal e uso de imagens como marca d'água.</b><br><br>" + $F{data}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="316" splitType="Stretch">
+			<subreport>
+				<reportElement positionType="Float" x="-20" y="0" width="595" height="316" uuid="f24d82c5-257d-4f4d-a663-8e267bbc6c6a"/>
+				<subreportParameter name="parRecebidoRelPrincipal">
+					<subreportParameterExpression><![CDATA[$P{parTextoSubReport}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="parOcultarTitulo">
+					<subreportParameterExpression><![CDATA[$P{ocultarTitulo}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{parJrTreinamentoJasperPojo}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{parSubreportCompile}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

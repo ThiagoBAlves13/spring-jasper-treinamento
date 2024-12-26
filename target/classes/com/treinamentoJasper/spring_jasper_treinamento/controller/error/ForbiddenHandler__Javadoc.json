@@ -1,0 +1,1 @@
+{"doc":"","fields":[],"enumConstants":[],"methods":[{"name":"handle","paramTypes":["org.springframework.security.access.AccessDeniedException"],"doc":"\n Método interceptador global da exception {@link AccessDeniedException}.\r\n\r\n @param exception uma {@link AccessDeniedException}\r\n @return resposta HTTP relacionada\r\n"}],"constructors":[]}

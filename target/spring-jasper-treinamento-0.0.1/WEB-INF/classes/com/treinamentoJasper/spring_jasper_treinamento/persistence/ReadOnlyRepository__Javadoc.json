@@ -1,0 +1,1 @@
+{"doc":" Interface que torna um repositório JPA apenas-leitura, expondo apenas os métodos de consulta de dados para uma Entidade.\n\n @author Núcleo de Implantação da Fábrica de Software - CASNAV, 2021\n @param <T> Classe da Entidade\n @param <ID> Tipo da chave-primária da Entidade\n","fields":[],"enumConstants":[],"methods":[],"constructors":[]}

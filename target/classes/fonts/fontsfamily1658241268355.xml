@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+	<fontFamily name="Carlito">
+		<normal><![CDATA[fonts/Carlito/Carlito-Regular.ttf]]></normal>
+		<bold><![CDATA[fonts/Carlito/Carlito-Bold.ttf]]></bold>
+		<italic><![CDATA[fonts/Carlito/Carlito-Italic.ttf]]></italic>
+		<boldItalic><![CDATA[fonts/Carlito/Carlito-BoldItalic.ttf]]></boldItalic>
+		<pdfEncoding><![CDATA[Identity-H]]></pdfEncoding>
+	</fontFamily>
+	<fontSet name="FontSet">
+		<family familyName="Carlito" primary="true">
+			<excludedScript><![CDATA[Latin]]></excludedScript>
+		</family>
+	</fontSet>
+</fontFamilies>

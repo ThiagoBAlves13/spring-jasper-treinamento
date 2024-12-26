@@ -1,0 +1,1 @@
+{"doc":"","fields":[],"enumConstants":[],"methods":[],"constructors":[{"name":"<init>","paramTypes":["java.lang.String"],"doc":"\n \r\n Construtor para capturar e tratar GenericException repassando para o construtor pai {@link RuntimeException}\r\n \r\n @param msg {@link String}\r\n"}]}

@@ -1,0 +1,1 @@
+{"doc":"","fields":[],"enumConstants":[],"methods":[{"name":"swaggerAPI","paramTypes":[],"doc":"\n \r\n Método que define a configuração do Swagger - OpenApi (sem autorização)\r\n \r\n @return configuração OpenAPI\r\n"}],"constructors":[]}

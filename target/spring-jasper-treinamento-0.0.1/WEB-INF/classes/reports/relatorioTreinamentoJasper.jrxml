@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorioTreinamentoJasper" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="15" bottomMargin="15" isSummaryNewPage="true" isSummaryWithPageHeaderAndFooter="true" uuid="b62e9c22-fee9-49b7-980e-b849075e3c46">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="net.sf.jasperreports.export.docx.frames.as.nested.tables" value="false"/>
+	<property name="net.sf.jasperreports.export.docx.flexible.row.height" value="true"/>
+	<property name="net.sf.jasperreports.export.odt.flexible.row.height" value="true"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<import value="java.awt.Graphics2D"/>
+	<style name="marca d&apos;agua" mode="Transparent" forecolor="rgba(0, 0, 0, 0.05490196)" hTextAlign="Center" vTextAlign="Middle" rotation="Left" fontSize="33"/>
+	<subDataset name="ListagemAlunosCurso" uuid="9efc3741-79d3-45df-bc8c-cf75f791c69b">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="_THIS" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="subtitulo" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[false]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cidade" class="java.lang.String"/>
+	<parameter name="uf" class="java.lang.String"/>
+	<parameter name="data" class="java.time.LocalDate"/>
+	<parameter name="mes" class="java.lang.String"/>
+	<parameter name="dia" class="java.lang.Integer"/>
+	<parameter name="ano" class="java.lang.Integer"/>
+	<parameter name="parMarkup" class="java.lang.String"/>
+	<parameter name="parNoImage" class="java.lang.String"/>
+	<parameter name="parInserirParametro" class="java.lang.String"/>
+	<parameter name="parParametroImagem" class="java.lang.String"/>
+	<parameter name="clonandoJrBean" class="java.lang.String"/>
+	<parameter name="marcaDagua" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="curso" class="java.lang.String"/>
+	<field name="nomes" class="java.util.List"/>
+	<field name="jrNomes" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<background>
+		<band height="812" splitType="Prevent">
+			<staticText>
+				<reportElement style="marca d&apos;agua" positionType="Float" x="0" y="0" width="100" height="812" forecolor="rgba(0, 0, 0, 0.05490196)" uuid="fe7de934-348f-46f5-a46a-82e3b55779cd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CASNAV 13]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="marca d&apos;agua" positionType="Float" x="207" y="0" width="100" height="812" forecolor="rgba(0, 0, 0, 0.05490196)" uuid="9e55368d-b909-4a9a-9892-66ee05eac709"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Treinamento de JasperReport com Jaspersoft Studio.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="marca d&apos;agua" positionType="Float" x="415" y="0" width="100" height="812" forecolor="rgba(0, 0, 0, 0.05490196)" uuid="e94dcd9e-73f6-4f35-a059-f8d049aa93bc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CASNAV 13]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="marca d&apos;agua" x="100" y="0" width="107" height="812" forecolor="rgba(0, 0, 0, 0.05490196)" uuid="79af7256-5d64-4f33-8e66-8548025c734f"/>
+				<text><![CDATA[SISTEMAS INFORMATIZADOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="marca d&apos;agua" x="308" y="0" width="107" height="812" forecolor="rgba(0, 0, 0, 0.05490196)" uuid="ef1f2c3a-aaff-4487-8b05-091516fafc6e"/>
+				<text><![CDATA[SISTEMAS INFORMATIZADOS]]></text>
+			</staticText>
+			<image scaleImage="RealSize" hAlign="Center" vAlign="Middle">
+				<reportElement x="0" y="0" width="515" height="812" uuid="9976ebbe-cc06-4d21-a00d-b3ebcb35d673">
+					<printWhenExpression><![CDATA[$P{marcaDagua} != null]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{marcaDagua}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="25" width="515" height="30" uuid="b4437c67-fd59-4865-8e36-bba7c620face"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TREINAMENTO DE JASPER]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="0" y="1" width="515" height="18" uuid="46d6ddcc-a19a-47ff-976d-3e253557ae45">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Carlito" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{subtitulo} ? "JasperReport" : null]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="239" y="67" width="275" height="16" isRemoveLineWhenBlank="true" uuid="2ace7b2e-c94a-4271-bc65-dbb529ff76cd">
+					<printWhenExpression><![CDATA[$P{cidade} != null && $P{uf} != null && $P{mes} != null && $P{dia} != null && $P{ano} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{cidade} + ", " + $P{uf} + ", " + $P{dia} + " de " + $P{mes}  + " de " + $P{ano} + "."]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="22">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} != 1]]></printWhenExpression>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="0" y="2" width="515" height="18" uuid="eab96c59-77c9-4ac2-8ce1-b1fdf6d7b6a0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Carlito" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{subtitulo} ? "JasperReport" : null]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="596" splitType="Prevent">
+			<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() == 1]]></printWhenExpression>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="5" width="515" height="59" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="990dc06f-f69e-46b5-8faf-41bce3a81f56">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box bottomPadding="0"/>
+				<textElement textAlignment="Left">
+					<font fontName="Carlito" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Treinamento Jasper" + "\n" + "\n" +
+
+"a) Usando Text Field: é um campo dinâmico e ideal para ser utilizado com fields e/ou parameters. Permite concatenação de texto e fields e/ou parameters."]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="65" width="515" height="36" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="f0ded8b0-219e-4c01-8058-8772c28449c1">
+					<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<paragraph lineSpacing="Single" firstLineIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Em propriedades podemos efetuar diversas configurações para formatação do texto, como: fonte, tamanho, alinhamento, parágrado, ajuste no texto ao campo, entre outras opções. <br><b>Podemos também usar tags html nos campos Text, porém é necessário em propriedades na seleção Markup escolher html.</b>"]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="112" width="515" height="219" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="f6a72dd4-d933-43d1-b14e-7a9cfdf4f52b"/>
+				<imageExpression><![CDATA[$P{parMarkup}]]></imageExpression>
+			</image>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="341" width="515" height="25" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="c7e57b7d-ef44-49e2-b336-09b9dcbdd695">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box bottomPadding="0"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="Carlito" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>b) Adicionando Imagem:</b> em Basic Elements selecionar Image e depois clicar na parte do relatório que deixa incluir a imagem. Criar o parametro com o local da imagem passada pelo backend e depois referenciar na imagem."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="367" width="515" height="29" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" forecolor="#FC0810" uuid="270534c6-b6e5-43d7-be08-0620b3b93bb4"/>
+				<textElement>
+					<font isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Obs: como o local da imagem é definida no backend a opção selecionada deve ser No image. É possível ajustar o alinhamento na propriedade da imagem.]]></text>
+			</staticText>
+			<image vAlign="Middle">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="400" width="170" height="196" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="bb29d393-c790-47c7-921d-7afc5a850ba9"/>
+				<imageExpression><![CDATA[$P{parNoImage}]]></imageExpression>
+			</image>
+			<image vAlign="Middle">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="172" y="400" width="170" height="196" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="7eb04906-653e-46c8-9cfb-57334df65a02"/>
+				<imageExpression><![CDATA[$P{parParametroImagem}]]></imageExpression>
+			</image>
+			<image vAlign="Middle">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="344" y="400" width="170" height="196" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="e9baacbe-324a-443d-ace5-a6a3f8adfa8c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{parInserirParametro}]]></imageExpression>
+			</image>
+		</band>
+		<band height="298">
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="2" width="515" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="e773bb1b-eaed-4f0b-ad7a-f10baa473740">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() == 1]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="Carlito" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>Parte II - Usando Lista ou Tabela:</b> em ambos os casos é necessário ter um field do tipo JRBeanCollectionDataSource, pois será utilizado com um DATASET para o preenchimento dos componentes em questão."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="21" width="515" height="44" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" forecolor="#FC0810" uuid="3ebb664d-7b67-4ca6-8050-1fe2fd8c4b5c">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() == 1]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Obs: O Jasper possui uma limitação para o uso desses JrBeanCollection quando usado repetidamente, gerando listas, tabelas etc em brancos. Por isso é importante clonar o JrBeanCollection principal na criação de um novo DATASET.]]></text>
+			</staticText>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="150" y="65" width="210" height="169" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="2433eb3e-62ef-411f-948e-2b8ed64d7eae">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}.intValue() == 1]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{clonandoJrBean}]]></imageExpression>
+			</image>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="236" width="515" height="24" isRemoveLineWhenBlank="true" uuid="83dd4087-0112-41d5-9b38-5a7bfc9f0765">
+					<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Carlito" size="12"/>
+					<paragraph lineSpacing="Single" firstLineIndent="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Treinamento de "+ $F{curso} + "."]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="261" width="515" height="19" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="563d2148-79ce-4ff6-ace6-fdc2fdad9dbf"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Alunos matriculados:"]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="280" width="515" height="18" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" uuid="2e20e3d0-41fb-4f22-b5cd-7ff5eb7278e4"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="ListagemAlunosCurso" uuid="76e3ce1b-a550-40a5-9650-bc4b61fc6e58">
+						<dataSourceExpression><![CDATA[$F{jrNomes}.cloneDataSource()]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="18" width="515">
+						<textField textAdjust="StretchHeight">
+							<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="515" height="18" isRemoveLineWhenBlank="true" uuid="7d471374-584a-42e6-a1b7-3bdc04ddeb82"/>
+							<textElement textAlignment="Left" verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[$F{_THIS}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="53">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement stretchType="ContainerHeight" x="0" y="17" width="515" height="18" uuid="f37b2372-1652-4825-afb2-13e228206392">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Carlito" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{subtitulo} ? "JasperReport" : null]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="225" y="36" width="36" height="15" uuid="7a45560a-187c-4bab-824c-175d32e1cba8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Carlito" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" - " + $V{PAGE_NUMBER}+" de "]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" evaluationTime="Report">
+				<reportElement positionType="Float" x="261" y="36" width="33" height="15" uuid="ce75010d-cd08-4ef6-85ad-cd99074725d2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Carlito" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER} + " - "]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,1 @@
+{"doc":"","fields":[],"enumConstants":[],"methods":[{"name":"handle","paramTypes":["com.treinamentoJasper.spring_jasper_treinamento.exception.BadGatewayException"],"doc":"\n Método interceptador global da exception {@link BadGatewayException}.\r\n\r\n @param exception uma exception {@link BadGatewayException}\r\n @return resposta HTTP relacionada\r\n"}],"constructors":[]}

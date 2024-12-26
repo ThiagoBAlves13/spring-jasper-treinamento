@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorioTabelaComGrafico" printOrder="Horizontal" pageWidth="1400" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1316" leftMargin="42" rightMargin="42" topMargin="42" bottomMargin="42" isSummaryNewPage="true" isIgnorePagination="true" uuid="11a87be7-c003-4cd1-bbad-e999d3772ed8">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="parLogo" class="java.lang.String"/>
+	<parameter name="parUf" class="java.lang.String"/>
+	<parameter name="parSitucoes" class="java.lang.String"/>
+	<parameter name="parValorTotalPlanejado" class="java.math.BigDecimal"/>
+	<parameter name="parOrigensAgregadas" class="java.lang.String"/>
+	<parameter name="totalPlanejadoImportada" class="java.math.BigDecimal"/>
+	<parameter name="totalRecebidoImportada" class="java.math.BigDecimal"/>
+	<parameter name="totalPendenteImportada" class="java.math.BigDecimal"/>
+	<parameter name="totalPlanejadoNacional" class="java.math.BigDecimal"/>
+	<parameter name="totalRecebidoNacional" class="java.math.BigDecimal"/>
+	<parameter name="totalPendenteNacional" class="java.math.BigDecimal"/>
+	<parameter name="totalPlanejadoNaoDefinico" class="java.math.BigDecimal"/>
+	<parameter name="totalRecebidoNaoDefinico" class="java.math.BigDecimal"/>
+	<parameter name="totalPendenteNaoDefinico" class="java.math.BigDecimal"/>
+	<parameter name="agregadoImportada" class="java.lang.String"/>
+	<parameter name="agregadoNacional" class="java.lang.String"/>
+	<parameter name="agregadoNaoDefinido" class="java.lang.String"/>
+	<parameter name="percentualRecebido" class="java.math.BigDecimal"/>
+	<parameter name="percentualPendente" class="java.math.BigDecimal"/>
+	<parameter name="parProjetosNaoEncontrado" class="java.lang.Boolean"/>
+	<parameter name="parSomatorioPlanejado" class="java.util.HashMap"/>
+	<parameter name="parSomatorioRecebido" class="java.util.HashMap"/>
+	<parameter name="parSomatorioPendente" class="java.util.HashMap"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="uf" class="java.lang.String"/>
+	<field name="projeto" class="java.lang.String"/>
+	<field name="situacao" class="java.lang.String"/>
+	<field name="dataInicio" class="java.lang.String"/>
+	<field name="dataFim" class="java.lang.String"/>
+	<field name="origemAgregada" class="java.lang.String"/>
+	<field name="planejado" class="java.math.BigDecimal"/>
+	<field name="recebido" class="java.math.BigDecimal"/>
+	<field name="pendente" class="java.math.BigDecimal"/>
+	<field name="statusRecurso" class="java.lang.String"/>
+	<sortField name="uf"/>
+	<variable name="Soma Planejado" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{planejado}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="Soma Recebido" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{recebido}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="Soma Pendente" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{pendente}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<group name="Group_UF" isReprintHeaderOnEachPage="true" minDetailsToStartFromTop="1" preventOrphanFooter="true">
+		<groupExpression><![CDATA[$F{uf}]]></groupExpression>
+		<groupHeader>
+			<band height="121" splitType="Immediate">
+				<textField textAdjust="StretchHeight">
+					<reportElement positionType="Float" x="0" y="41" width="1249" height="20" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group_UF" uuid="65acbbbe-c03b-4f29-9c3f-c6c65f860d52">
+						<printWhenExpression><![CDATA[!$P{parProjetosNaoEncontrado}]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Carlito" size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["UF: " + $F{uf}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupBottom" mode="Opaque" x="186" y="81" width="299" height="40" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group_UF" forecolor="#FFFFFF" backcolor="#6B7278" uuid="0d5b19e8-8f65-4371-b0c5-bfba54934b5f">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<printWhenExpression><![CDATA[!$P{parProjetosNaoEncontrado}]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Carlito" size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Projeto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupBottom" mode="Opaque" x="485" y="81" width="74" height="40" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group_UF" forecolor="#FFFFFF" backcolor="#6B7278" uuid="12a67630-e687-414e-9d55-18c7d8570c4b">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<printWhenExpression><![CDATA[!$P{parProjetosNaoEncontrado}]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Carlito" size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Início]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupBottom" mode="Opaque" x="559" y="81" width="74" height="40" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group_UF" forecolor="#FFFFFF" backcolor="#6B7278" uuid="b9280642-eb7c-434e-bd9b-f5d329dec2ac">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<printWhenExpression><![CDATA[!$P{parProjetosNaoEncontrado}]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Carlito" size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Término Estimado]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupBottom" mode="Opaque" x="633" y="81" width="81" height="40" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group_UF" forecolor="#FFFFFF" backcolor="#6B7278" uuid="e21e86b6-186b-4833-961d-520629e6cebe">
+						<printWhenExpression><![CDATA[!$P{parProjetosNaoEncontrado}]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Carlito" size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Situação]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="0" y="10" width="1249" height="27" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group_UF" uuid="c7e104a3-f9e8-47e6-83a9-4acaabdc6822">
+						<printWhenExpression><![CDATA[$P{parProjetosNaoEncontrado}]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center">
+						<font fontName="Carlito" size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Não foram encontrados resultados para a pesquisa realizada!"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupBottom" mode="Opaque" x="714" y="81" width="105" height="40" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group_UF" forecolor="#FFFFFF" backcolor="#6B7278" uuid="1c7ef16a-2c94-4639-8143-000a0c751afa">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<printWhenExpression><![CDATA[!$P{parProjetosNaoEncontrado}]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Carlito" size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Valor Planejado (R$)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupBottom" mode="Opaque" x="819" y="81" width="105" height="40" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group_UF" forecolor="#FFFFFF" backcolor="#6B7278" uuid="8098b95a-aa38-4c2c-bc34-f1ee26234145">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<printWhenExpression><![CDATA[!$P{parProjetosNaoEncontrado}]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Carlito" size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Valor Recebido (R$)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupBottom" mode="Opaque" x="924" y="81" width="105" height="40" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group_UF" forecolor="#FFFFFF" backcolor="#6B7278" uuid="796d8729-ccbf-41b9-aefc-558ac59d0510">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<printWhenExpression><![CDATA[!$P{parProjetosNaoEncontrado}]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Carlito" size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Valor Pendente (R$)]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="81">
+				<frame>
+					<reportElement x="186" y="0" width="843" height="39" uuid="554a1386-4fca-4428-b264-c187c4c91374"/>
+					<box>
+						<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<staticText>
+						<reportElement positionType="Float" stretchType="ElementGroupBottom" mode="Opaque" x="0" y="0" width="330" height="39" isRemoveLineWhenBlank="true" forecolor="#FFFFFF" backcolor="#6B7278" uuid="89e78d25-f780-4e89-82ef-c740abf00bb0">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</reportElement>
+						<box>
+							<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Carlito" size="11" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Total]]></text>
+					</staticText>
+					<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+						<reportElement positionType="Float" stretchType="ElementGroupBottom" x="528" y="0" width="105" height="39" isRemoveLineWhenBlank="true" uuid="b3a05e3c-beb1-4fcd-a0b0-affd2ced3e22"/>
+						<box padding="2">
+							<pen lineWidth="0.25" lineStyle="Solid"/>
+							<topPen lineWidth="0.25"/>
+							<leftPen lineWidth="0.25"/>
+							<bottomPen lineWidth="0.25"/>
+							<rightPen lineWidth="0.25"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Carlito" size="11"/>
+						</textElement>
+						<textFieldExpression><![CDATA[String.format("%,.2f", $P{parSomatorioPlanejado}.get($F{uf}))]]></textFieldExpression>
+					</textField>
+					<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+						<reportElement positionType="Float" stretchType="ElementGroupBottom" x="738" y="0" width="105" height="39" isRemoveLineWhenBlank="true" uuid="3fe34664-78e2-40af-b445-4f1b58f96d2a">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						</reportElement>
+						<box padding="2">
+							<pen lineWidth="0.25" lineStyle="Solid"/>
+							<topPen lineWidth="0.25"/>
+							<leftPen lineWidth="0.25"/>
+							<bottomPen lineWidth="0.25"/>
+							<rightPen lineWidth="0.25"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Carlito" size="11"/>
+						</textElement>
+						<textFieldExpression><![CDATA[String.format("%,.2f", $P{parSomatorioPendente}.get($F{uf}))]]></textFieldExpression>
+					</textField>
+					<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+						<reportElement positionType="Float" stretchType="ElementGroupBottom" x="633" y="0" width="105" height="39" isRemoveLineWhenBlank="true" uuid="11597439-63b6-48ee-8efd-7aaffb94cd89">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						</reportElement>
+						<box padding="2">
+							<pen lineWidth="0.25" lineStyle="Solid"/>
+							<topPen lineWidth="0.25"/>
+							<leftPen lineWidth="0.25"/>
+							<bottomPen lineWidth="0.25"/>
+							<rightPen lineWidth="0.25"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Carlito" size="11"/>
+						</textElement>
+						<textFieldExpression><![CDATA[String.format("%,.2f", $P{parSomatorioRecebido}.get($F{uf}))]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="174">
+			<frame>
+				<reportElement positionType="Float" stretchType="ContainerHeight" x="0" y="108" width="1249" height="66" isRemoveLineWhenBlank="true" uuid="9e0870b5-170f-4ec2-ae06-e1a5f396b843"/>
+				<box padding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textField textAdjust="StretchHeight">
+					<reportElement positionType="Float" x="7" y="3" width="1242" height="18" isRemoveLineWhenBlank="true" uuid="196c7af7-e484-4b72-8dfa-c8d612a9bce7">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<printWhenExpression><![CDATA[$P{parUf} != null]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Carlito" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA["UF: " +$P{parUf}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement positionType="Float" x="7" y="21" width="1242" height="18" isRemoveLineWhenBlank="true" uuid="513336c4-efe8-460e-aafc-8d4aa15d1617">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<printWhenExpression><![CDATA[$P{parSitucoes} != null]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Carlito" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Situações: " +$P{parSitucoes}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement isPrintRepeatedValues="false" x="0" y="45" width="1249" height="21" isRemoveLineWhenBlank="true" uuid="609092a1-16fb-4b5a-91e2-03d1f3fd13ba">
+						<printWhenExpression><![CDATA[$P{parUf} == null && $P{parSitucoes} == null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center">
+						<font fontName="Carlito" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nenhum filtro selecionado.]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement x="0" y="91" width="758" height="17" uuid="54c66fc4-5af1-4478-9dab-364ef12f8c12"/>
+				<textElement>
+					<font fontName="Carlito" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Critérios selecionados: ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="290" height="70" uuid="0853db6d-a76b-4e2f-95fa-cec7f6594d2a"/>
+				<imageExpression><![CDATA[$P{parLogo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="73" width="1248" height="18" uuid="79faabd4-831c-438a-806e-c76a53d74705"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Carlito" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RELATÓRIO DE PROJETOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="39" splitType="Immediate">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="186" y="0" width="299" height="39" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group_UF" uuid="7ba711cb-79e7-4e87-9bff-14e2dbed0986"/>
+				<box padding="2">
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Carlito" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{projeto} != null ? $F{projeto} : " - "]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="485" y="0" width="74" height="39" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group_UF" uuid="d15f4c3b-3274-473e-93a1-e48b8ad0e507">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box padding="2">
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Carlito" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataInicio} != null ? $F{dataInicio} : " - "]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="559" y="0" width="74" height="39" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group_UF" uuid="98261cc5-95b9-4f1b-9a46-51e6436d01e3">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box padding="2">
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Carlito" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataFim} != null ? $F{dataFim} : " - "]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="633" y="0" width="81" height="39" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group_UF" uuid="39f23650-6948-440a-a909-03a1a1d821de"/>
+				<box padding="2">
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Carlito" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{situacao} != null ? $F{situacao} : " - "]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="714" y="0" width="105" height="39" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group_UF" uuid="b9b4b8eb-d6ad-4dbc-86db-b003830fd12a"/>
+				<box padding="2">
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Carlito" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{planejado} != null ? String.format("%,.2f", $F{planejado}) : " - "]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="819" y="0" width="105" height="39" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group_UF" uuid="0b26389f-7b6f-4b01-9fff-8ceb433ffc0e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box padding="2">
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Carlito" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{recebido} != null ? String.format("%,.2f", $F{recebido}) : " - "]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="false">
+				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="924" y="0" width="105" height="39" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group_UF" uuid="03b829f9-b7ea-487b-b3cf-9da66aed37bc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box padding="2">
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Carlito" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pendente} != null ? String.format("%,.2f", $F{pendente}) : " - "]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="511">
+			<lineChart>
+				<chart isShowLegend="false" evaluationTime="Report" theme="generic">
+					<reportElement x="0" y="0" width="1316" height="280" uuid="06a738e3-0c43-4601-ba39-523a52869552"/>
+					<box leftPadding="0" rightPadding="0"/>
+					<chartTitle>
+						<font isBold="true"/>
+						<titleExpression><![CDATA["Gráfico Geral dos Projetos"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend position="Right"/>
+				</chart>
+				<categoryDataset>
+					<dataset resetType="Report"/>
+					<categorySeries>
+						<seriesExpression><![CDATA["Planejado"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{projeto}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{planejado}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Recebido"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{projeto}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{recebido}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<linePlot>
+					<plot backcolor="#F2F7FC" labelRotation="64.0">
+						<seriesColor seriesOrder="0" color="#7493CA"/>
+						<seriesColor seriesOrder="1" color="#1F7F10"/>
+					</plot>
+					<categoryAxisFormat labelRotation="64.0">
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000">
+							<tickLabelFont>
+								<font size="10"/>
+							</tickLabelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</linePlot>
+			</lineChart>
+			<pie3DChart>
+				<chart isShowLegend="false" evaluationTime="Report" theme="generic">
+					<reportElement x="0" y="279" width="660" height="210" uuid="6a526af8-3bb5-4c69-9ecc-e04a36b82661"/>
+					<chartTitle>
+						<font isBold="true"/>
+						<titleExpression><![CDATA["Valor total planejado: R$ " + new java.text.DecimalFormat("#,###,##0.00").format($V{Soma Planejado})]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend position="Right"/>
+				</chart>
+				<pieDataset>
+					<dataset resetType="None"/>
+					<pieSeries>
+						<keyExpression><![CDATA["Recebido"]]></keyExpression>
+						<valueExpression><![CDATA[$V{Soma Recebido}]]></valueExpression>
+						<labelExpression><![CDATA["R$ " + new java.text.DecimalFormat("#,###,##0.00").format($V{Soma Recebido}) 
++ " - " + String.format("%,.2f", $P{percentualRecebido}) +"%"]]></labelExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA["Pendente"]]></keyExpression>
+						<valueExpression><![CDATA[$V{Soma Pendente}]]></valueExpression>
+						<labelExpression><![CDATA["R$ " + new java.text.DecimalFormat("#,###,##0.00").format($V{Soma Pendente}) + " - " + String.format("%,.2f", $P{percentualPendente}) +"%"]]></labelExpression>
+					</pieSeries>
+				</pieDataset>
+				<pie3DPlot>
+					<plot backcolor="#F2F7FC">
+						<seriesColor seriesOrder="0" color="#1F7F10"/>
+						<seriesColor seriesOrder="1" color="#FF0000"/>
+					</plot>
+					<itemLabel/>
+				</pie3DPlot>
+			</pie3DChart>
+			<bar3DChart>
+				<chart isShowLegend="false" evaluationTime="Report" theme="generic">
+					<reportElement x="660" y="279" width="656" height="210" uuid="8123a768-770e-4d3e-ad53-15cf4c4bc265">
+						<propertyExpression name="net.sf.jasperreports.customizer.0.selectionMode"><![CDATA["Planejado"]]></propertyExpression>
+						<propertyExpression name="net.sf.jasperreports.customizer.0.allItems"><![CDATA["Planejado"]]></propertyExpression>
+						<propertyExpression name="net.sf.jasperreports.customizer.1.selectionMode"><![CDATA["Recebido"]]></propertyExpression>
+						<propertyExpression name="net.sf.jasperreports.customizer.1.allItems"><![CDATA["Recebido"]]></propertyExpression>
+						<propertyExpression name="net.sf.jasperreports.customizer.2.selectionMode"><![CDATA["Pendente"]]></propertyExpression>
+						<propertyExpression name="net.sf.jasperreports.customizer.2.allItems"><![CDATA["Pendente"]]></propertyExpression>
+					</reportElement>
+					<chartTitle>
+						<font isBold="true"/>
+						<titleExpression><![CDATA["Recursos de acordo com a Origem"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend position="Right"/>
+				</chart>
+				<categoryDataset>
+					<dataset resetType="Report"/>
+					<categorySeries>
+						<seriesExpression><![CDATA["Planejado - MB"]]></seriesExpression>
+						<categoryExpression><![CDATA[$P{agregadoImportada}]]></categoryExpression>
+						<valueExpression><![CDATA[$P{totalPlanejadoImportada}]]></valueExpression>
+						<labelExpression><![CDATA["R$ " + new java.text.DecimalFormat("#,###,##0.00").format($P{totalPlanejadoImportada})]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Recebido - MB"]]></seriesExpression>
+						<categoryExpression><![CDATA[$P{agregadoImportada}]]></categoryExpression>
+						<valueExpression><![CDATA[$P{totalRecebidoImportada}]]></valueExpression>
+						<labelExpression><![CDATA["R$ " + new java.text.DecimalFormat("#,###,##0.00").format($P{totalRecebidoImportada})]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Pendente - MB"]]></seriesExpression>
+						<categoryExpression><![CDATA[$P{agregadoImportada}]]></categoryExpression>
+						<valueExpression><![CDATA[$P{totalPendenteImportada}]]></valueExpression>
+						<labelExpression><![CDATA["R$ " + new java.text.DecimalFormat("#,###,##0.00").format($P{totalPendenteImportada})]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Planejado - Extra-MB"]]></seriesExpression>
+						<categoryExpression><![CDATA[$P{agregadoNacional}]]></categoryExpression>
+						<valueExpression><![CDATA[$P{totalPlanejadoNacional}]]></valueExpression>
+						<labelExpression><![CDATA["R$ " + new java.text.DecimalFormat("#,###,##0.00").format($P{totalPlanejadoNacional})]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Recebido - Extra-MB"]]></seriesExpression>
+						<categoryExpression><![CDATA[$P{agregadoNacional}]]></categoryExpression>
+						<valueExpression><![CDATA[$P{totalRecebidoNacional}]]></valueExpression>
+						<labelExpression><![CDATA["R$ " + new java.text.DecimalFormat("#,###,##0.00").format($P{totalRecebidoNacional})]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Pendente - Extra-MB"]]></seriesExpression>
+						<categoryExpression><![CDATA[$P{agregadoNacional}]]></categoryExpression>
+						<valueExpression><![CDATA[$P{totalPendenteNacional}]]></valueExpression>
+						<labelExpression><![CDATA["R$ " + new java.text.DecimalFormat("#,###,##0.00").format($P{totalPendenteNacional})]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Planejado - Não definido"]]></seriesExpression>
+						<categoryExpression><![CDATA[$P{agregadoNaoDefinido}]]></categoryExpression>
+						<valueExpression><![CDATA[$P{totalPlanejadoNaoDefinico}]]></valueExpression>
+						<labelExpression><![CDATA["R$ " + new java.text.DecimalFormat("#,###,##0.00").format($P{totalPlanejadoNaoDefinico})]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Recebido - Não definido"]]></seriesExpression>
+						<categoryExpression><![CDATA[$P{agregadoNaoDefinido}]]></categoryExpression>
+						<valueExpression><![CDATA[$P{totalRecebidoNaoDefinico}]]></valueExpression>
+						<labelExpression><![CDATA["R$ " + new java.text.DecimalFormat("#,###,##0.00").format($P{totalRecebidoNaoDefinico})]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Pendente - Não definido"]]></seriesExpression>
+						<categoryExpression><![CDATA[$P{agregadoNaoDefinido}]]></categoryExpression>
+						<valueExpression><![CDATA[$P{totalPendenteNaoDefinico}]]></valueExpression>
+						<labelExpression><![CDATA["R$ " + new java.text.DecimalFormat("#,###,##0.00").format($P{totalPendenteNaoDefinico})]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot isShowLabels="true" xOffset="15.0">
+					<plot backcolor="#F2F7FC">
+						<seriesColor seriesOrder="0" color="#7493CA"/>
+						<seriesColor seriesOrder="1" color="#1F7F10"/>
+						<seriesColor seriesOrder="2" color="#FF0000"/>
+						<seriesColor seriesOrder="3" color="#7493CA"/>
+						<seriesColor seriesOrder="4" color="#1F7F10"/>
+						<seriesColor seriesOrder="5" color="#FF0000"/>
+						<seriesColor seriesOrder="6" color="#7493CA"/>
+						<seriesColor seriesOrder="7" color="#1F7F10"/>
+						<seriesColor seriesOrder="8" color="#FF0000"/>
+					</plot>
+					<itemLabel/>
+					<categoryAxisLabelExpression><![CDATA["Origem dos Recursos"]]></categoryAxisLabelExpression>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisLabelExpression><![CDATA["Valores em Real"]]></valueAxisLabelExpression>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</bar3DChart>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="489" width="1316" height="22" forecolor="#EEEEEE" backcolor="#EEEEEE" uuid="0d618f63-4482-46c2-af39-60cb236d9a96"/>
+				<box topPadding="0" leftPadding="7" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#EEEEEE"/>
+				</box>
+				<staticText>
+					<reportElement x="518" y="1" width="50" height="20" uuid="a18dbd0c-4115-4d3e-a087-be70cabcc923"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[Legenda:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="590" y="1" width="51" height="20" uuid="48c40121-af0b-4d8e-87c2-2e57e763c1d4">
+						<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="0">
+						<pen lineWidth="0.0" lineStyle="Solid" lineColor="#EEEEEE"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[Planejado]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="568" y="1" width="22" height="20" forecolor="#7493CA" backcolor="#7493CA" uuid="964cb9f5-368d-457a-b1f3-86a36cade1a8">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="0.25" lineStyle="Solid" lineColor="#EEEEEE"/>
+					</graphicElement>
+				</rectangle>
+				<rectangle>
+					<reportElement x="641" y="1" width="22" height="20" forecolor="#1F7F10" backcolor="#1F7F10" uuid="f061bc09-ee32-44d5-96b3-df5cd499ed51">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="0.25" lineStyle="Solid" lineColor="#EEEEEE"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="663" y="1" width="51" height="20" uuid="b222f6ba-0e41-495c-a458-813761c1b4ef">
+						<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="0">
+						<pen lineWidth="0.0" lineStyle="Solid" lineColor="#EEEEEE"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[Recebido]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="714" y="1" width="22" height="20" forecolor="#FF0000" backcolor="#FF0000" uuid="c17f3402-f6ad-473a-bf6b-c36d8e817dad">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="0.25" lineStyle="Solid" lineColor="#EEEEEE"/>
+					</graphicElement>
+				</rectangle>
+				<staticText>
+					<reportElement x="736" y="1" width="52" height="20" uuid="071af50f-fd2d-4a5c-b2ca-685fa08dbd29">
+						<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="0">
+						<pen lineWidth="0.0" lineStyle="Solid" lineColor="#EEEEEE"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<text><![CDATA[Pendente]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>
