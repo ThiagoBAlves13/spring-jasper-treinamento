@@ -1,6 +1,6 @@
 # Resumo
 
-O intuito deste projeto é ajudar a iniciar um novo projeto backend com uso do JasperReport e o framework Spring boot. Esse template possui uma estrutura genérica que acelera o desenvolvimento inicial com exemplos e modelos de arquivos .jrxml seguindo os padrões e convenções apresentados pelo C-13, em JUL24, para a Plataforma C-10 (que envolve todo o CASNAV-10).
+O intuito deste projeto é ajudar a iniciar um novo projeto backend com uso do JasperReport e o framework Spring boot.
 
 <h4> Conteúdo do template:</h4>
 
@@ -20,8 +20,6 @@ O intuito deste projeto é ajudar a iniciar um novo projeto backend com uso do J
 
 <h4> Estrutura do geral projeto: </h4>
 
-- doc: são os arquivos relacionados a documentação Sphinx do projeto. 
-    - Arquivo principal para leitura da documentação é o index.html
 - src/main: pasta principal com duas subpastas.
     - api: que contém o código do projeto; e
     - resources: que contém recursos/arquivos que configuram e/ou são utilizados pela API.
@@ -49,7 +47,7 @@ O intuito deste projeto é ajudar a iniciar um novo projeto backend com uso do J
 <h4> Tecnologias utilizadas: </h4>
 
 - Spring Boot: 3.2.4.
-- Banco de dados: h2, postgres, sqlserver
+- Banco de dados: h2
 - Hibernate
 - Swagger
 - Lombok
@@ -66,7 +64,7 @@ O intuito deste projeto é ajudar a iniciar um novo projeto backend com uso do J
 
 1. Clone o projeto para a sua máquina. Abra um terminal e execute:
 ```
-git clone http://gitlab.casnav.mb/casnav-fsw/backend-vanilla-spring-boot-3-jasperreport.git
+git clone https://github.com/ThiagoBAlves13/spring-jasper-treinamento.git
 ```
 2. Abra o projeto no Eclipse: File -> Open Projects From File System -> Directory -> Selecionar pasta do projeto e finalizar
 
