@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorioCalendarioEscala" columnCount="31" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="25" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryNewPage="true" uuid="b7ea372b-e5c2-4c63-9554-1e672fcd842c">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<style name="AtribuiCorAoTrigrama" mode="Transparent">
@@ -62,7 +62,7 @@
 		</queryString>
 		<field name="_THIS" class="java.lang.String"/>
 	</subDataset>
-	<parameter name="parZS" class="java.lang.String">
+	<parameter name="parRegiao" class="java.lang.String">
 		<parameterDescription><![CDATA[Zona de Praticagem]]></parameterDescription>
 		<defaultValueExpression><![CDATA["TODAS"]]></defaultValueExpression>
 	</parameter>
@@ -136,7 +136,7 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$P{parZS}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$P{parRegiao}]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>

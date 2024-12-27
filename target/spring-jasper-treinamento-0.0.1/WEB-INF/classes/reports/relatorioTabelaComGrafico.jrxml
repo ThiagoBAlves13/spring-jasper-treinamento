@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorioTabelaComGrafico" printOrder="Horizontal" pageWidth="1400" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1316" leftMargin="42" rightMargin="42" topMargin="42" bottomMargin="42" isSummaryNewPage="true" isIgnorePagination="true" uuid="11a87be7-c003-4cd1-bbad-e999d3772ed8">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -12,8 +12,8 @@
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<parameter name="parLogo" class="java.lang.String"/>
-	<parameter name="parUf" class="java.lang.String"/>
-	<parameter name="parSitucoes" class="java.lang.String"/>
+	<parameter name="parUF" class="java.lang.String"/>
+	<parameter name="parSituacoes" class="java.lang.String"/>
 	<parameter name="parValorTotalPlanejado" class="java.math.BigDecimal"/>
 	<parameter name="parOrigensAgregadas" class="java.lang.String"/>
 	<parameter name="totalPlanejadoImportada" class="java.math.BigDecimal"/>
@@ -260,26 +260,26 @@
 				<textField textAdjust="StretchHeight">
 					<reportElement positionType="Float" x="7" y="3" width="1242" height="18" isRemoveLineWhenBlank="true" uuid="196c7af7-e484-4b72-8dfa-c8d612a9bce7">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-						<printWhenExpression><![CDATA[$P{parUf} != null]]></printWhenExpression>
+						<printWhenExpression><![CDATA[$P{parUF} != null]]></printWhenExpression>
 					</reportElement>
 					<textElement verticalAlignment="Middle">
 						<font fontName="Carlito" size="12"/>
 					</textElement>
-					<textFieldExpression><![CDATA["UF: " +$P{parUf}]]></textFieldExpression>
+					<textFieldExpression><![CDATA["UF: " +$P{parUF}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight">
 					<reportElement positionType="Float" x="7" y="21" width="1242" height="18" isRemoveLineWhenBlank="true" uuid="513336c4-efe8-460e-aafc-8d4aa15d1617">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-						<printWhenExpression><![CDATA[$P{parSitucoes} != null]]></printWhenExpression>
+						<printWhenExpression><![CDATA[$P{parSituacoes} != null]]></printWhenExpression>
 					</reportElement>
 					<textElement verticalAlignment="Middle">
 						<font fontName="Carlito" size="12"/>
 					</textElement>
-					<textFieldExpression><![CDATA["Situações: " +$P{parSitucoes}]]></textFieldExpression>
+					<textFieldExpression><![CDATA["Situações: " +$P{parSituacoes}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement isPrintRepeatedValues="false" x="0" y="45" width="1249" height="21" isRemoveLineWhenBlank="true" uuid="609092a1-16fb-4b5a-91e2-03d1f3fd13ba">
-						<printWhenExpression><![CDATA[$P{parUf} == null && $P{parSitucoes} == null]]></printWhenExpression>
+						<printWhenExpression><![CDATA[$P{parUF} == null && $P{parSituacoes} == null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Center">
 						<font fontName="Carlito" size="12" isBold="true"/>
@@ -422,7 +422,7 @@
 	<summary>
 		<band height="511">
 			<lineChart>
-				<chart isShowLegend="false" evaluationTime="Report" theme="generic">
+				<chart isShowLegend="false" evaluationTime="Report" theme="eye.candy.sixties">
 					<reportElement x="0" y="0" width="1316" height="280" uuid="06a738e3-0c43-4601-ba39-523a52869552"/>
 					<box leftPadding="0" rightPadding="0"/>
 					<chartTitle>
@@ -433,7 +433,6 @@
 					<chartLegend position="Right"/>
 				</chart>
 				<categoryDataset>
-					<dataset resetType="Report"/>
 					<categorySeries>
 						<seriesExpression><![CDATA["Planejado"]]></seriesExpression>
 						<categoryExpression><![CDATA[$F{projeto}]]></categoryExpression>
@@ -512,7 +511,6 @@
 					<chartLegend position="Right"/>
 				</chart>
 				<categoryDataset>
-					<dataset resetType="Report"/>
 					<categorySeries>
 						<seriesExpression><![CDATA["Planejado - MB"]]></seriesExpression>
 						<categoryExpression><![CDATA[$P{agregadoImportada}]]></categoryExpression>

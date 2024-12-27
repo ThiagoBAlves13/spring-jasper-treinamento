@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorioTreinamentoJasper" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="15" bottomMargin="15" isSummaryNewPage="true" isSummaryWithPageHeaderAndFooter="true" uuid="b62e9c22-fee9-49b7-980e-b849075e3c46">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="net.sf.jasperreports.export.docx.frames.as.nested.tables" value="false"/>
@@ -39,27 +39,9 @@
 	<background>
 		<band height="812" splitType="Prevent">
 			<staticText>
-				<reportElement style="marca d&apos;agua" positionType="Float" x="0" y="0" width="100" height="812" forecolor="rgba(0, 0, 0, 0.05490196)" uuid="fe7de934-348f-46f5-a46a-82e3b55779cd"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[CASNAV 13]]></text>
-			</staticText>
-			<staticText>
 				<reportElement style="marca d&apos;agua" positionType="Float" x="207" y="0" width="100" height="812" forecolor="rgba(0, 0, 0, 0.05490196)" uuid="9e55368d-b909-4a9a-9892-66ee05eac709"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Treinamento de JasperReport com Jaspersoft Studio.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="marca d&apos;agua" positionType="Float" x="415" y="0" width="100" height="812" forecolor="rgba(0, 0, 0, 0.05490196)" uuid="e94dcd9e-73f6-4f35-a059-f8d049aa93bc"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[CASNAV 13]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="marca d&apos;agua" x="100" y="0" width="107" height="812" forecolor="rgba(0, 0, 0, 0.05490196)" uuid="79af7256-5d64-4f33-8e66-8548025c734f"/>
-				<text><![CDATA[SISTEMAS INFORMATIZADOS]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="marca d&apos;agua" x="308" y="0" width="107" height="812" forecolor="rgba(0, 0, 0, 0.05490196)" uuid="ef1f2c3a-aaff-4487-8b05-091516fafc6e"/>
-				<text><![CDATA[SISTEMAS INFORMATIZADOS]]></text>
 			</staticText>
 			<image scaleImage="RealSize" hAlign="Center" vAlign="Middle">
 				<reportElement x="0" y="0" width="515" height="812" uuid="9976ebbe-cc06-4d21-a00d-b3ebcb35d673">
